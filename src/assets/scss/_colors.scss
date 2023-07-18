@@ -1,0 +1,36 @@
+$accent: #f4ce14;
+$primary: #495e57;
+$secondary: #ee9972;
+$tertiary: #fbdabb;
+$lightgrey: #edefee;
+$darkgrey: #333333;
+$grey: #939393;
+$light: #ffffff;
+
+.accentText {
+	color: $accent;
+}
+
+.primaryText {
+	color: $primary;
+}
+
+.secondaryText {
+	color: $secondary;
+}
+
+.tertiaryText {
+	color: $tertiary;
+}
+
+.lightgreyText {
+	color: $lightgrey;
+}
+
+.darkgreyText {
+	color: $darkgrey;
+}
+
+.lightText {
+	color: $light;
+}

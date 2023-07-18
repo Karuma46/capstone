@@ -1,0 +1,38 @@
+.d-flex {
+	display: flex;
+}
+
+.fl-h-center {
+	@extend .d-flex;
+	justify-content: center;
+}
+
+.fl-h-btw {
+	@extend .d-flex;
+	justify-content: space-between;
+}
+
+.fl-v-center {
+	@extend .d-flex;
+	align-items: center;
+}
+
+section {
+	width: 100%;
+	padding: 50px 70px;
+	.sectionWrap {
+		width: 100%;
+		max-width: 1000px;
+		margin: 0px auto;
+		padding-top: 50px;
+		.sectionHeader {
+			@extend .fl-h-btw;
+		}
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	section {
+		padding: 30px;
+	}
+}

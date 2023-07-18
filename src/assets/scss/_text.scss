@@ -1,0 +1,70 @@
+html {
+	font-size: 100%;
+} /*16px*/
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	margin: 0px;
+}
+
+.markaziText {
+	font-family: "Markazi Text", sans-serif;
+}
+
+.karla {
+	font-family: "karla", sans-serif;
+}
+
+.displayTitle {
+	@extend .markaziText;
+	font-size: 64px;
+	font-weight: 500;
+}
+
+.subTitle {
+	@extend .markaziText;
+	font-size: 40px;
+	font-weight: 400;
+	line-height: 0;
+}
+
+.leadText {
+	@extend .karla;
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.sectionTitle {
+	@extend .karla;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.sectionCategory {
+	@extend .karla;
+	font-size: 16px;
+	font-weight: 800;
+}
+
+.cardTitle {
+	@extend .karla;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.pText,
+p {
+	@extend .karla;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 20px;
+}
+
+.highlightText {
+	@extend .karla;
+	font-size: 16px;
+	font-weight: 600;
+}

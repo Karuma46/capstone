@@ -1,0 +1,45 @@
+.specials {
+	@extend .fl-h-btw;
+	flex-wrap: wrap;
+}
+
+.special {
+	width: 30%;
+	padding: 20px 0px;
+}
+
+.specialWrap {
+	width: 100%;
+	background-color: $lightgrey;
+	border-radius: 8px;
+	overflow: hidden;
+	.specialImage {
+		width: 100%;
+		aspect-ratio: 1/1;
+		img {
+			// width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	.specialText {
+		width: 100%;
+		padding: 15px;
+	}
+	&:hover {
+		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	}
+}
+@media only screen and (max-width: 900px) {
+	.special {
+		width: 48%;
+		padding: 20px 0px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.special {
+		width: 100%;
+		padding: 20px 0px;
+	}
+}

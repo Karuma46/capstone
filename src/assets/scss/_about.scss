@@ -1,0 +1,60 @@
+#aboutSection {
+	width: 100%;
+	.sectionWrap {
+		@extend .fl-h-btw;
+		flex-wrap: wrap;
+		.aboutText {
+			width: 48%;
+			h1 {
+				@extend .displayTitle;
+				color: $accent;
+			}
+			h5 {
+				@extend .subTitle;
+			}
+			p {
+				margin: 40px 0px;
+				line-height: 26px;
+			}
+		}
+		.aboutImages {
+			width: 48%;
+			text-align: center;
+			position: relative;
+			figure {
+				width: 50%;
+				overflow: hidden;
+				border-radius: 16px;
+				aspect-ratio: 2/3;
+				box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+				margin: 0;
+				img {
+					height: 100%;
+					margin-left: -70%;
+				}
+				&:first-child {
+					z-index: 9;
+				}
+				&:last-child {
+					left: 0px;
+					top: 100px;
+					margin-top: -50%;
+					margin-left: 30%;
+				}
+			}
+		}
+	}
+}
+@media only screen and (max-width: 700px) {
+	#aboutSection {
+		.sectionWrap {
+			.aboutText {
+				width: 90%;
+				margin: 10px auto;
+			}
+			.aboutImages {
+				margin: 30px auto;
+			}
+		}
+	}
+}

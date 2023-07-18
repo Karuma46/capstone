@@ -1,0 +1,14 @@
+button {
+	@extend .leadText;
+	background-color: $accent;
+	border: none;
+	padding: 10px 15px;
+	cursor: pointer;
+	border-radius: 8px;
+}
+
+button.textBtn {
+	background: none;
+	background-color: none !important;
+	padding: 10px 0px;
+}
