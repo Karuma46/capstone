@@ -1,5 +1,6 @@
 import logo from "assets/img/Logo.svg";
 import Nav from "components/nav";
+import { Link } from "react-router-dom";
 
 const Header = () => {
 	return (
@@ -7,7 +8,9 @@ const Header = () => {
 			<header>
 				<div id="headerWrap">
 					<div className="logo">
-						<img src={logo} alt="Little Lemon Logo" />
+						<Link to="/">
+							<img src={logo} alt="Little Lemon Logo" />
+						</Link>
 					</div>
 
 					<Nav />

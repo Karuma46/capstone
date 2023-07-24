@@ -1,25 +1,30 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 
 import Home from "home";
-import Booking from "booking";
+import BookingRoutes from "booking/routes";
 
 import "./App.scss";
 
-const router = createBrowserRouter([
-	{
-		path: "/",
-		element: <Home />,
-	},
-	{
-		path: "/booking",
-		element: <Booking />,
-	},
-]);
+// const router = createBrowserRouter([
+// 	{
+// 		path: "/",
+// 		element: <Home />,
+// 	},
+// 	{
+// 		path: "/booking",
+// 		element: <BookingRoutes />,
+// 	},
+// ]);
 
 function App() {
 	return (
 		<>
-			<RouterProvider router={router} />
+			<Router>
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/booking/*" element={<BookingRoutes />} />
+				</Routes>
+			</Router>
 		</>
 	);
 }

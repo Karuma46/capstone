@@ -1,4 +1,5 @@
 import hero from "assets/img/hero.jpg";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
 	return (
@@ -19,7 +20,9 @@ const Hero = () => {
 							ex ea commodo consequat.
 						</p>
 						<br />
-						<button>Reserve a Table</button>
+						<Link to="booking">
+							<button>Reserve a Table</button>
+						</Link>
 					</div>
 					<div id="heroImage">
 						<div className="imageWrap">
