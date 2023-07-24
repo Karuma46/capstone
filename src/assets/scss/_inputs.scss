@@ -1,0 +1,45 @@
+form {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding: 30px 0px;
+	gap: 10px;
+	width: 100%;
+	.formInput {
+		width: 100%;
+	}
+	.formInput.half {
+		width: 48%;
+	}
+}
+
+.formInput {
+	margin-bottom: 20px;
+	label {
+		display: block;
+		margin-bottom: 10px;
+		@extend .sectionCategory, .lightText;
+	}
+	input,
+	select {
+		height: 42px;
+		width: 100%;
+		padding: 0px 10px;
+		box-sizing: border-box;
+		border: none;
+		border-radius: 8px;
+		text-align: center;
+		@extend .highlightText;
+	}
+}
+
+.formInput.light {
+	label {
+		@extend .darkgreyText;
+	}
+	input,
+	select {
+		border: 1px solid $darkgrey;
+		text-align: left;
+	}
+}
