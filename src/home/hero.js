@@ -1,4 +1,4 @@
-import hero from "assets/img/hero.jpg";
+import heroimg from "assets/img/hero.jpg";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
@@ -26,7 +26,7 @@ const Hero = () => {
 					</div>
 					<div id="heroImage">
 						<div className="imageWrap">
-							<img src={hero} alt="" />
+							<img src={heroimg} alt="" />
 						</div>
 					</div>
 				</div>
