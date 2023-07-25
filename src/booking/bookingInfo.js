@@ -1,16 +1,22 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Footer from "components/footer";
 import Header from "components/header";
 import FormInput from "components/inputs";
-import { Link } from "react-router-dom";
 
 const BookingInfo = () => {
+	const navigate = useNavigate();
 	const [info, setInfo] = useState({
 		email: "",
 		firstname: "",
 		lastname: "",
 		phonenumber: "",
 	});
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		navigate("/booking/pay");
+	};
 
 	return (
 		<>
@@ -51,19 +57,21 @@ const BookingInfo = () => {
 								</div>
 							</div>
 							<div className="sectionContent">
-								<form>
+								<form onSubmit={handleSubmit}>
 									<FormInput
-										label="Email Address"
+										label="Email Address *"
 										type="email"
 										value={info.email}
 										className="light"
+										required={true}
 									/>
 
 									<FormInput
-										label="First Name"
+										label="First Name *"
 										type="text"
 										value={info.firstname}
 										className="light half"
+										required={true}
 									/>
 
 									<FormInput
@@ -80,9 +88,9 @@ const BookingInfo = () => {
 										className="light"
 									/>
 
-									<Link to="/booking/pay">
-										<button>Payment Details</button>
-									</Link>
+									<button type="submit">
+										Payment Details
+									</button>
 								</form>
 							</div>
 						</div>

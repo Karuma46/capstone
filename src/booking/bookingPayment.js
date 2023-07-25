@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import Footer from "components/footer";
 import Header from "components/header";
 import FormInput from "components/inputs";
 
 const BookingPayment = () => {
+	const navigate = useNavigate();
+
 	const [pay, setPay] = useState({
 		cardNumber: "",
 		cvv: "",
@@ -12,6 +15,15 @@ const BookingPayment = () => {
 		postalCode: "",
 		city: "",
 	});
+
+	const handleChange = (obj) => {
+		setPay({ ...pay, ...obj });
+	};
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		navigate("/booking/success");
+	};
 
 	return (
 		<>
@@ -52,34 +64,41 @@ const BookingPayment = () => {
 								</div>
 							</div>
 							<div className="sectionContent">
-								<form>
+								<form onSubmit={handleSubmit}>
 									<FormInput
 										label="Card Number*"
 										type="text"
 										value={pay.cardNumber}
 										className="light"
+										required={true}
+										onChange={handleChange}
 									/>
 									<FormInput
 										label="CVV*"
 										type="text"
 										value={pay.cvv}
 										className="light half"
+										required={true}
+										onChange={handleChange}
 									/>
 
 									<FormInput
-										label="Expiry Date"
+										label="Expiry Date *"
 										type="month"
 										value={pay.expiryDate}
 										className="light half"
+										required={true}
+										onChange={handleChange}
 									/>
 
 									<hr style={{ width: "100%" }} />
 
 									<FormInput
-										label="Address"
+										label="Address *"
 										type="text"
 										value={pay.address}
 										className="light half"
+										required={true}
 									/>
 									<FormInput
 										label="Postal Code/Zip"
@@ -88,13 +107,14 @@ const BookingPayment = () => {
 										className="light half"
 									/>
 									<FormInput
-										label="City"
+										label="City *"
 										type="text"
 										value={pay.city}
 										className="light"
+										required={true}
 									/>
 
-									<button>Pay</button>
+									<button type="submit">Pay</button>
 								</form>
 							</div>
 						</div>

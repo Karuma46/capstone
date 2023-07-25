@@ -1,4 +1,4 @@
-
+import { useState } from "react";
 
 import Footer from "components/footer";
 import Header from "components/header";
@@ -7,6 +7,8 @@ import BookingForm from "./bookingForm";
 import BookingTables from "./bookingTables";
 
 const Booking = () => {
+	const [showTables, setShowTables] = useState(false);
+
 	return (
 		<>
 			<div id="container">
@@ -24,31 +26,37 @@ const Booking = () => {
 										sit upto a party of 10!
 									</p>
 								</div>
-								<BookingForm />
+								<BookingForm setShowTables={setShowTables} />
 							</div>
 						</div>
 					</section>
 					<section>
 						<div className="sectionWrap">
-							<div className="sectionHeader">
-								<h3 className="sectionTitle">Pick A Table</h3>
-								<div>
-									<span>
-										<i className="fas fa-circle-chevron-left fa-lg">
-											{" "}
-										</i>
-									</span>
-									&nbsp; &nbsp;
-									<span>
-										<i className="fas fa-circle-chevron-right fa-lg">
-											{" "}
-										</i>
-									</span>
-								</div>
-							</div>
-							<div className="sectionContent">
-								<BookingTables />
-							</div>
+							{showTables && (
+								<>
+									<div className="sectionHeader">
+										<h3 className="sectionTitle">
+											Pick A Table
+										</h3>
+										<div>
+											<span>
+												<i className="fas fa-circle-chevron-left fa-lg">
+													{" "}
+												</i>
+											</span>
+											&nbsp; &nbsp;
+											<span>
+												<i className="fas fa-circle-chevron-right fa-lg">
+													{" "}
+												</i>
+											</span>
+										</div>
+									</div>
+									<div className="sectionContent">
+										<BookingTables />
+									</div>
+								</>
+							)}
 						</div>
 					</section>
 				</main>

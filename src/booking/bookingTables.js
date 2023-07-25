@@ -30,7 +30,7 @@ const TableCard = ({ table }) => {
 							<div className="specialCTA">
 								<Link to="info">
 									<button className="textBtn">
-										Pick a table
+										Book Table
 									</button>
 								</Link>
 							</div>

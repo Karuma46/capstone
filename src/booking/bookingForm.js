@@ -1,12 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import FormInput from "components/inputs";
 
-const BookingForm = () => {
+const BookingForm = ({ setShowTables }) => {
 	const [booking, setBooking] = useState({
 		date: "",
 		timeslot: "8-10",
-		location: "Indoors",
+		occassion: "Birthday",
 		diners: 1,
 	});
 
@@ -29,24 +28,49 @@ const BookingForm = () => {
 		},
 	]);
 
-	const [locations] = useState([
+	const [occassions] = useState([
 		{
-			name: "Indoors",
-			value: "Indoors",
+			name: "Birthday",
+			value: "Birthday",
 		},
 		{
-			name: "Outdoors",
-			value: "Outdoors",
+			name: "Anniversary",
+			value: "Anniversary",
 		},
 	]);
+
+	const getMinDate = () => {
+		var d = new Date();
+		var today = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(
+			2,
+			0
+		)}-${d.getUTCDate()}`;
+		console.log(today);
+		return today;
+	};
+
+	const getMaxDate = () => {
+		var d = new Date();
+		var today = `${d.getFullYear()}-${String(d.getMonth() + 2).padStart(
+			2,
+			0
+		)}-${d.getUTCDate()}`;
+		console.log(today);
+		return today;
+	};
 
 	const handleBooking = (obj) => {
 		setBooking({ ...booking, ...obj });
 	};
 
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		setShowTables(true);
+	};
+
 	return (
 		<>
-			<form>
+			<form onSubmit={handleSubmit}>
 				<FormInput
 					label="Date:"
 					type="date"
@@ -54,26 +78,31 @@ const BookingForm = () => {
 					value={booking.date}
 					onChange={handleBooking}
 					className="half"
+					min={getMinDate()}
+					max={getMaxDate()}
+					required={true}
 				/>
 
 				<FormInput
-					label="Timeslot:"
+					label="Available Times:"
 					type="select"
 					id="timeslot"
 					value={booking.timeslot}
 					options={timeslots}
 					onChange={handleBooking}
 					className="half"
+					required={true}
 				/>
 
 				<FormInput
-					label="Location:"
+					label="Occassion:"
 					type="select"
-					id="location"
-					value={booking.location}
-					options={locations}
+					id="occassion"
+					value={booking.occassion}
+					options={occassions}
 					onChange={handleBooking}
 					className="half"
+					required={true}
 				/>
 				<FormInput
 					label="Number of Diners:"
@@ -84,8 +113,9 @@ const BookingForm = () => {
 					min="1"
 					onChange={handleBooking}
 					className="half"
+					required={true}
 				/>
-				<button>Find a Table</button>
+				<button type="submit">Find a Table</button>
 			</form>
 		</>
 	);
