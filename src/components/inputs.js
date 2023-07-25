@@ -6,6 +6,7 @@ const FormInput = (props) => {
 				{props.type === "select" && (
 					<select
 						id={props.id}
+						required={props.required}
 						onChange={(e) =>
 							props.onChange({ [props.id]: e.target.value })
 						}>
@@ -17,12 +18,19 @@ const FormInput = (props) => {
 					</select>
 				)}
 				{["email", "text", "tel"].includes(props.type) && (
-					<input type={props.type} id={props.id} />
+					<input
+						type={props.type}
+						id={props.id}
+						required={props.required}
+					/>
 				)}
 				{["date", "month"].includes(props.type) && (
 					<input
 						type={props.type}
 						id={props.id}
+						required={props.required}
+						min={props.min}
+						max={props.max}
 						onChange={(e) =>
 							props.onChange({ [props.id]: e.target.value })
 						}
@@ -34,6 +42,7 @@ const FormInput = (props) => {
 						max={props.max}
 						min={props.min}
 						id={props.id}
+						required={props.required}
 						onChange={(e) =>
 							props.onChange({ [props.id]: e.target.value })
 						}
