@@ -60,7 +60,7 @@ const BookingTables = () => {
 
 	return (
 		<>
-			<div id="tables" className="fl-h-btw">
+			<div id="tables" className="specials">
 				{tables.map((i) => (
 					<TableCard table={i} key={i.name} />
 				))}
