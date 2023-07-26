@@ -99,12 +99,14 @@ const BookingPayment = () => {
 										value={pay.address}
 										className="light half"
 										required={true}
+										onChange={handleChange}
 									/>
 									<FormInput
 										label="Postal Code/Zip"
 										type="text"
 										value={pay.postalCode}
 										className="light half"
+										onChange={handleChange}
 									/>
 									<FormInput
 										label="City *"
@@ -112,6 +114,7 @@ const BookingPayment = () => {
 										value={pay.city}
 										className="light"
 										required={true}
+										onChange={handleChange}
 									/>
 
 									<button type="submit">Pay</button>

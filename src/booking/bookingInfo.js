@@ -13,6 +13,10 @@ const BookingInfo = () => {
 		phonenumber: "",
 	});
 
+	const handleChange = (obj) => {
+		setInfo({ ...info, ...obj });
+	};
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		navigate("/booking/pay");
@@ -64,6 +68,7 @@ const BookingInfo = () => {
 										value={info.email}
 										className="light"
 										required={true}
+										onChange={handleChange}
 									/>
 
 									<FormInput
@@ -72,6 +77,7 @@ const BookingInfo = () => {
 										value={info.firstname}
 										className="light half"
 										required={true}
+										onChange={handleChange}
 									/>
 
 									<FormInput
@@ -79,6 +85,7 @@ const BookingInfo = () => {
 										type="text"
 										value={info.lastname}
 										className="light half"
+										onChange={handleChange}
 									/>
 
 									<FormInput
@@ -86,6 +93,7 @@ const BookingInfo = () => {
 										type="tel"
 										value={info.phonenumber}
 										className="light"
+										onChange={handleChange}
 									/>
 
 									<button type="submit">
