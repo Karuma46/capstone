@@ -3,6 +3,7 @@ footer {
 	// height: 100px;
 	padding: 20px 0px;
 	@extend .fl-h-center;
+	color: $primary;
 	#footerWrap {
 		width: 60%;
 		@extend .fl-h-btw;
@@ -12,6 +13,10 @@ footer {
 			ul {
 				list-style-type: none;
 				@extend .leadText;
+				li a {
+					text-decoration: none;
+					color: $primary;
+				}
 			}
 		}
 		.contacts {
