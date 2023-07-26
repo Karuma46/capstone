@@ -22,6 +22,9 @@ const FormInput = (props) => {
 						type={props.type}
 						id={props.id}
 						required={props.required}
+						onChange={(e) =>
+							props.onChange({ [props.id]: e.target.value })
+						}
 					/>
 				)}
 				{["date", "month"].includes(props.type) && (

@@ -19,7 +19,9 @@ const MobileNav = () => {
 					</div>
 					<div className="sideBarNavWrap">
 						<ul>
-							<li>Home</li>
+							<li>
+								<a href="#logo">Home</a>
+							</li>
 							<li>About</li>
 							<li>Menu</li>
 							<li>Reservations</li>
@@ -38,10 +40,18 @@ const Nav = () => {
 		<>
 			<nav>
 				<ul>
-					<li>Home</li>
-					<li>About</li>
-					<li>Menu</li>
-					<li>Reservations</li>
+					<li>
+						<a href="/">Home</a>
+					</li>
+					<li>
+						<a href="#aboutSection">About</a>
+					</li>
+					<li>
+						<a href="#specialsSection">Menu</a>
+					</li>
+					<li>
+						<a href="/booking">Reservations</a>
+					</li>
 					<li>Order Online</li>
 					<li>Login</li>
 				</ul>

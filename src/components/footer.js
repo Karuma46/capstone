@@ -10,12 +10,24 @@ const Footer = () => {
 					</div>
 					<div className="links">
 						<ul>
-							<li>Home</li>
-							<li>About</li>
-							<li>Menu</li>
-							<li>Reservations</li>
-							<li>Order Online</li>
-							<li>Login</li>
+							<li>
+								<a href="/">Home</a>
+							</li>
+							<li>
+								<a href="/#aboutSection">About</a>
+							</li>
+							<li>
+								<a href="/#specialsSection">Menu</a>
+							</li>
+							<li>
+								<a href="/booking">Reservations</a>
+							</li>
+							<li>
+								<a href="/">Order Online</a>
+							</li>
+							<li>
+								<a href="/">Login</a>
+							</li>
 						</ul>
 					</div>
 					<div className="contacts">
